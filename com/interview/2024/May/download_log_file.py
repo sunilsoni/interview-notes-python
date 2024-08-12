@@ -1,5 +1,6 @@
-import requests
 from collections import Counter
+
+import requests
 
 
 def download_log_file(file_url):
