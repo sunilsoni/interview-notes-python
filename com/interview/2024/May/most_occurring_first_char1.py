@@ -18,6 +18,7 @@ def most_occurring_first_char(word):
     # Return the earliest occurring character among the most frequent
     return min(most_frequent, key=word.index), max_count
 
+
 def main():
     # Test cases
     test_cases = [
