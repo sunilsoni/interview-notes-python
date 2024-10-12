@@ -5,7 +5,6 @@ class Node(object):
         self.name = name
         self.children = children or []
 
-
     def count_employees(self):
         """Return a count of how many employees this person manages.
 
@@ -48,10 +47,9 @@ class Node(object):
         return count
 
 
-
-
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:

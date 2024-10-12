@@ -23,7 +23,6 @@ def merge_ranges(lst):
     # time: O(nlogn)
     # space: O(n)
 
-
     meeting_times = sorted(lst)
 
     merged_range = [meeting_times[0]]
@@ -36,22 +35,13 @@ def merge_ranges(lst):
         else:
             merged_range.append((start, end))
 
-
-
-
-
-
     return merged_range
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
     if not results.failed:
-        print 'All tests passed!'
+        print
+        'All tests passed!'

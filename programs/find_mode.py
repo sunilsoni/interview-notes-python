@@ -39,11 +39,9 @@ def find_mode(arr):
     return n
 
 
-
-
-
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if not results.failed:

@@ -6,7 +6,6 @@ class Node(object):
         self.next = None
 
 
-
 class Queue(object):
     """ Creates a queue using a linked list. """
 
@@ -14,13 +13,11 @@ class Queue(object):
         self.head = None
         self.tail = None
 
-
     def __repr__(self):
         if not self.length():
             return '<Queue (empty)>'
         else:
             return '<Queue %s>' % self.head
-
 
     def length(self):
         """ Gets length of queue.
@@ -40,7 +37,6 @@ class Queue(object):
             curr = curr.next
 
         return length
-
 
     def enqueue(self, item):
         """ Add item to end of queue::
@@ -65,7 +61,6 @@ class Queue(object):
         else:
             self.tail.next = new_node
             self.tail = new_node
-
 
     def dequeue(self):
         """ Add item to end of queue::
@@ -96,7 +91,6 @@ class Queue(object):
             self.head = self.head.next
             return dequeued
 
-
     def is_empty(self):
         """ True/false if queue is empty.
 
@@ -113,7 +107,6 @@ class Queue(object):
         """
 
         return self.head is None
-
 
     def peek(self):
         """ Return but don't remove the first item in the queue.
@@ -132,7 +125,6 @@ class Queue(object):
         """
 
         return self.head.data
-
 
     def print_queue(self):
         """ Prints items in queue in a list.
@@ -165,11 +157,10 @@ class Queue(object):
         return queue
 
 
-
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if not results.failed:
         print("ALL TESTS PASSED!")
-

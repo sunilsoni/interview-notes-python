@@ -6,7 +6,6 @@ class Node(object):
         self.left = left
         self.right = right
 
-
     def insert(self, new_data):
         """ Inserts a new node with 'new_data' to BST tree rooted here.
         A "balanced" binary search tree is one where the nodes are equitably spread out to guarantee O(log n) search. For this code challenge, you should not try to re-arrange the tree to rebalance it after adding an item; instead, you should simply find the correct place in the current tree to add it.
@@ -50,10 +49,9 @@ class Node(object):
                 self.right.insert(new_data)
 
 
-
-
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:

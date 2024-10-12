@@ -8,7 +8,6 @@ import unittest
 
 
 def valid_parens_perms(num):
-
     result = []
 
     def recurse(substr, left, right):
@@ -36,7 +35,9 @@ class Testing(unittest.TestCase):
         self.assertEqual(valid_parens_perms(1), ['()'])
         self.assertEqual(valid_parens_perms(2), ['(())', '()()'])
         self.assertEqual(valid_parens_perms(3), ['((()))', '(()())', '(())()', '()(())', '()()()'])
-        self.assertEqual(valid_parens_perms(4), ['(((())))', '((()()))', '((())())', '((()))()', '(()(()))', '(()()())', '(()())()', '(())(())', '(())()()', '()((()))', '()(()())', '()(())()', '()()(())', '()()()()'])
+        self.assertEqual(valid_parens_perms(4),
+                         ['(((())))', '((()()))', '((())())', '((()))()', '(()(()))', '(()()())', '(()())()',
+                          '(())(())', '(())()()', '()((()))', '()(()())', '()(())()', '()()(())', '()()()()'])
 
 
 if __name__ == '__main__':

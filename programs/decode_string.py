@@ -28,7 +28,6 @@ def decode(s):
     return decoded
 
 
-
 def decode_2(s):
     """ Decodes a string. A valid code is a sequence of numbers and letters, always starting with a number and ending with letter(s).
 
@@ -57,15 +56,14 @@ def decode_2(s):
         if current.isdigit():
             decoded += s[int(current) + i + 1]
 
-        return _decode_2(s, decoded, i+1)
+        return _decode_2(s, decoded, i + 1)
 
     return _decode_2(s, '', 0)
 
 
-
-
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:

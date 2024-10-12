@@ -47,22 +47,14 @@ def reverse_linked_list(head):
         prev = curr
         curr = next
 
-
     return prev
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:
-        print "ALL TESTS PASSED!"
+        print
+        "ALL TESTS PASSED!"

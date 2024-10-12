@@ -30,8 +30,7 @@ def highest_product_of_three(list_of_ints):
     if len(list_of_ints) == 3:
         return highest_product
 
-
-    for i in range(2,len(list_of_ints)-1):
+    for i in range(2, len(list_of_ints) - 1):
         product = list_of_ints[i] * list_of_ints[i + 1]
         current_num = list_of_ints[i]
 
@@ -56,10 +55,9 @@ def highest_product_of_three(list_of_ints):
     return highest_product
 
 
-
-
 if __name__ == "__main__":
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:

@@ -1,6 +1,6 @@
-import sys
 import csv
 import re
+import sys
 
 
 class FindMatches(object):
@@ -18,7 +18,8 @@ class FindMatches(object):
         # Check if matching_type input is valid
         self.matching_type = matching_type.lower()
         if self.matching_type not in ['email', 'phone', 'email_phone']:
-            print "Please use a valid matching type: 'email', 'phone', or 'email_phone'."
+            print
+            "Please use a valid matching type: 'email', 'phone', or 'email_phone'."
 
         # Initialize variables for later assignment
         self.input_file = input_file
@@ -61,7 +62,6 @@ class FindMatches(object):
         # Write to csv after all ids are assigned
         self.write_csv(reader, self.header)
 
-
     def email_match(self, row, min_id):
         """ Creates email tuples and insert unique tuples into the ids dictionary. """
 
@@ -97,17 +97,15 @@ class FindMatches(object):
 
         return row_id
 
-
     def format_phone(self, row, column):
-            """ Removes formatting of phone numbers for direct comparison. """
+        """ Removes formatting of phone numbers for direct comparison. """
 
-            format_phone_col = re.sub('\D+','',row[column])
+        format_phone_col = re.sub('\D+', '', row[column])
 
-            if len(format_phone_col) > 10:
-                format_phone_col[1:]
+        if len(format_phone_col) > 10:
+            format_phone_col[1:]
 
-            return format_phone_col
-
+        return format_phone_col
 
     def phone_match(self, row, min_id):
         """ Creates phone tuples and insert unique tuples into the ids dictionary. """
@@ -143,12 +141,10 @@ class FindMatches(object):
 
         return row_id
 
-
     def add_key_to_dict(self, ids_key, iden):
         """ Places keys into a dictionary. If the key exists the key-value pair does not change. Otherwise, place it in the dictionary and assign it a new id. """
 
         self.ids[ids_key] = self.ids.get(ids_key, iden)
-
 
     def write_csv(self, reader, header, row_is_header=True):
         """ Using a csv writer, creates a copy of the file with unique ids prepended to each row. """
@@ -270,7 +266,4 @@ class FindMatches(object):
             self.id += 1
 
 
-
 FindMatches(input_file=sys.argv[1], matching_type=sys.argv[2])
-
-

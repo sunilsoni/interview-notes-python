@@ -10,7 +10,7 @@ class QuoteGenerator(object):
         self.quotes = quotes
 
     def generate_quote(self):
-        random_num = randint(0, len(self.quotes)-1)
+        random_num = randint(0, len(self.quotes) - 1)
 
         if random_num != self.last_rand_num:
             self.last_rand_num = random_num
@@ -20,13 +20,23 @@ class QuoteGenerator(object):
 
 
 generator1 = QuoteGenerator(quotes)
-print generator1.generate_quote()
-print generator1.generate_quote()
-print generator1.generate_quote()
-print generator1.generate_quote()
-print generator1.generate_quote()
-print generator1.generate_quote()
-print generator1.generate_quote()
-print generator1.generate_quote()
-print generator1.generate_quote()
-print generator1.generate_quote()
+print
+generator1.generate_quote()
+print
+generator1.generate_quote()
+print
+generator1.generate_quote()
+print
+generator1.generate_quote()
+print
+generator1.generate_quote()
+print
+generator1.generate_quote()
+print
+generator1.generate_quote()
+print
+generator1.generate_quote()
+print
+generator1.generate_quote()
+print
+generator1.generate_quote()

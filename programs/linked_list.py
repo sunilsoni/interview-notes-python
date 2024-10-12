@@ -1,12 +1,12 @@
 """ Implement a singly linked list. """
 
+
 class Node(object):
     """ Creates a node. """
 
     def __init__(self, data=None, nxt=None):
         self.data = data
         self.next = nxt
-
 
 
 class LinkedList(object):
@@ -29,7 +29,6 @@ class LinkedList(object):
             self.tail.next = new_node
             self.tail = new_node
 
-
         prev = None
         curr = self.head
         index = 0
@@ -39,10 +38,9 @@ class LinkedList(object):
                 prev.next = new_node
                 new_node.next = curr
                 return
-            index +=1
+            index += 1
             prev = prev.next
             curr = curr.next
-
 
     def size(self):
         """ Returns the length of the linked list. """
@@ -60,7 +58,6 @@ class LinkedList(object):
 
         return size
 
-
     def search(self, data):
         """ Takes data as an input and returns the node holding the data. """
 
@@ -72,7 +69,6 @@ class LinkedList(object):
             curr = curr.next
 
         raise ValueError('Data not in linked list.')
-
 
     def delete(self, data):
         """ Takes data as an input and deletes the node with that data. """
@@ -92,9 +88,3 @@ class LinkedList(object):
 
         if curr is None:
             raise ValueError('Data not in linked list.')
-
-
-
-
-
-

@@ -23,6 +23,7 @@ def get_products_of_all_ints_except_at_index(lst):
 
     return products
 
+
 # Testing
 # a = 0
 # product = 1
@@ -42,7 +43,6 @@ def get_products_of_all_ints_except_at_index(lst):
 
 # b = 0
 # product = 7 * 1
-
 
 
 def get_products_of_all_ints_except_at_index_optimized(lst):
@@ -68,12 +68,12 @@ def get_products_of_all_ints_except_at_index_optimized(lst):
         products_before.append(product)
         product *= lst[i]
 
-    for i in range(len(lst)-1, -1, -1):
+    for i in range(len(lst) - 1, -1, -1):
         products_after.append(product_reverse)
         product_reverse *= lst[i]
 
     for i in range(len(products_before)):
-        products.append(products_after[-i-1] * products_before[i])
+        products.append(products_after[-i - 1] * products_before[i])
 
     return products
 
@@ -112,12 +112,11 @@ def get_products_of_all_ints_except_at_index_optimized(lst):
 # i = -1
 
 
-
-
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:
-        print "ALL TESTS PASSED"
-
+        print
+        "ALL TESTS PASSED"

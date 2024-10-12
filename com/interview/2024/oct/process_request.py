@@ -32,6 +32,7 @@ class LoadBalancer:
             if self.requests_served[i] == max_requests:
                 return i
 
+
 def solution(serversPowers, events):
     lb = LoadBalancer(serversPowers)
     for event in events:
@@ -42,9 +43,11 @@ def solution(serversPowers, events):
             lb.fail_server(server_index)
     return lb.get_most_served_server()
 
+
 class Solution:
     def solution(self, serversPowers, events):
         return solution(serversPowers, events)
+
 
 def main():
     sol = Solution()
@@ -65,6 +68,7 @@ def main():
         print(f"Expected: {expected}")
         print("Pass" if result == expected else "Fail")
         print()
+
 
 if __name__ == "__main__":
     main()

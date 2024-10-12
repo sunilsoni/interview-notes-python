@@ -25,7 +25,6 @@ def recursive_index(needle, haystack):
     if needle == haystack[0]:
         return count
 
-
     count += 1 + recursive_index(needle, haystack[1:])
 
     return count
@@ -88,15 +87,16 @@ def recursive_index_3(needle, haystack):
         if needle == haystack[count]:
             return count
 
-        return _recursive_index_3(needle, haystack, count+1)
+        return _recursive_index_3(needle, haystack, count + 1)
 
     return _recursive_index_3(needle, haystack, 0)
 
 
-
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:
-        print "ALL TESTS PASSED!"
+        print
+        "ALL TESTS PASSED!"

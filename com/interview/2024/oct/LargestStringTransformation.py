@@ -42,4 +42,5 @@ def test_solution():
     result = sol.solution(67108876)
     print("Test Case 3: ", result == "zzdc", result)  # Expected output is "zzdc"
 
+
 test_solution()

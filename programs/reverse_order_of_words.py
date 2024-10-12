@@ -21,9 +21,12 @@ def reverse_order_of_words(lst):
 
     return list(reversed_words)
 
+
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:
-        print "ALL TESTS PASSED"
+        print
+        "ALL TESTS PASSED"

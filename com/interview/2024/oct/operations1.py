@@ -20,6 +20,7 @@ def solution(operations):
                 result.append(False)
     return result
 
+
 def test_solution():
     # Test case 1: No rectangles added yet, query should return True
     operations = [[1, 1, 1]]
@@ -52,6 +53,7 @@ def test_solution():
     print("Test case 5 passed.")
 
     print("All test cases passed.")
+
 
 # Run the test cases
 test_solution()

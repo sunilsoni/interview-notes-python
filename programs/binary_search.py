@@ -30,19 +30,19 @@ def binary_search(val):
 
     while guess != val:
         num_guesses += 1
-        guess = (high - low)/2 + low
+        guess = (high - low) / 2 + low
 
         if guess > val:
             high = guess
         elif guess < val:
             low = guess
 
-
     return num_guesses
 
 
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:

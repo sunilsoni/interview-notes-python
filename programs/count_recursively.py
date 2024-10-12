@@ -7,7 +7,6 @@ def count_recursively(lst):
     3
     """
 
-
     if not lst:
         return 0
 
@@ -16,6 +15,7 @@ def count_recursively(lst):
 
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:

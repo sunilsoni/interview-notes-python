@@ -1,5 +1,6 @@
 import unittest
 
+
 # Correct, but uses eval
 # def evaluate(expression):
 #     return eval(expression)
@@ -31,7 +32,7 @@ def evaluate(expression):
     expression = ''.join(expression.split(' '))
     storage = []
     parens_indices = []
-    operators = {'*': [], '/': [], '+': [],'-': []}
+    operators = {'*': [], '/': [], '+': [], '-': []}
 
     for i in range(len(expression)):
         char = expression[i]
@@ -40,7 +41,7 @@ def evaluate(expression):
         elif char == ')':
             start = parens_indices.pop() + 1
             total = str(calculate(expression[start:i], operators))
-            storage = storage[:start-1]
+            storage = storage[:start - 1]
             storage.append(total)
         else:
             storage.append(char)
@@ -54,7 +55,7 @@ def evaluate(expression):
 
 def calculate(inner_expression, operators):
     total = 0
-    operators = {'*': [], '/': [], '+': [],'-': []}
+    operators = {'*': [], '/': [], '+': [], '-': []}
     new_expr = inner_expression
 
     for i in range(len(inner_expression)):
@@ -64,35 +65,34 @@ def calculate(inner_expression, operators):
 
     while operators['*'] != []:
         op_index = operators['*'].pop()
-        prev = new_expr[op_index-1]
-        nxt = new_expr[op_index+1]
+        prev = new_expr[op_index - 1]
+        nxt = new_expr[op_index + 1]
         total = int(prev) * int(nxt)
-        new_expr = new_expr[:op_index-1] + str(total) + new_expr[op_index+2:]
+        new_expr = new_expr[:op_index - 1] + str(total) + new_expr[op_index + 2:]
         print(new_expr)
 
     while operators['/'] != []:
         op_index = operators['/'].pop()
-        prev = new_expr[op_index-1]
-        nxt = new_expr[op_index+1]
+        prev = new_expr[op_index - 1]
+        nxt = new_expr[op_index + 1]
         total = int(prev) / int(nxt)
-        new_expr = new_expr[:op_index-1] + str(total) + new_expr[op_index+2:]
+        new_expr = new_expr[:op_index - 1] + str(total) + new_expr[op_index + 2:]
 
     while operators['-'] != []:
         op_index = operators['-'].pop()
-        prev = new_expr[op_index-1]
-        nxt = new_expr[op_index+1]
+        prev = new_expr[op_index - 1]
+        nxt = new_expr[op_index + 1]
         total = int(prev) - int(nxt)
-        new_expr = new_expr[:op_index-1] + str(total) + new_expr[op_index+2:]
+        new_expr = new_expr[:op_index - 1] + str(total) + new_expr[op_index + 2:]
 
     while operators['+'] != []:
         op_index = operators['+'].pop()
-        prev = new_expr[op_index-1]
-        nxt = new_expr[op_index+1]
+        prev = new_expr[op_index - 1]
+        nxt = new_expr[op_index + 1]
         total = int(prev) + int(nxt)
-        new_expr = new_expr[:op_index-1] + str(total) + new_expr[op_index+2:]
+        new_expr = new_expr[:op_index - 1] + str(total) + new_expr[op_index + 2:]
 
     return total
-
 
 
 class Testing(unittest.TestCase):
@@ -115,4 +115,3 @@ class Testing(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

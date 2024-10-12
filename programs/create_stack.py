@@ -23,14 +23,12 @@ class Stack(object):
         self.items = []
         self.min_stack = []
 
-
     def __repr__(self):
         if not self.items:
             return "<Stack (empty)>"
         else:
             return "<Stack tail=%s length=%d>" % (
                 self.items[-1], len(self.items))
-
 
     def push(self, item):
         """Add item to end of stack."""
@@ -43,7 +41,6 @@ class Stack(object):
         else:
             self.min_stack.append(self.min_stack[-1])
 
-
     def pop(self):
         """Remove item from end of stack and return it."""
 
@@ -53,7 +50,6 @@ class Stack(object):
         self.min_stack.pop()
 
         return self.items.pop()
-
 
     def __iter__(self):
         """Allow iteration over list.
@@ -69,7 +65,6 @@ class Stack(object):
                 yield self.pop()
             except StackEmptyError:
                 raise StopIteration
-
 
     def length(self):
         """Return length of stack::
@@ -91,7 +86,6 @@ class Stack(object):
             count += 1
         return count
 
-
     def empty(self):
         """Empty stack::
 
@@ -112,7 +106,6 @@ class Stack(object):
         self.items = []
         self.min_stack = []
 
-
     def is_empty(self):
         """Is stack empty?
 
@@ -130,7 +123,6 @@ class Stack(object):
         """
 
         return self.items == []
-
 
     def find_min(self):
         """ Returns the minimum value of a numerical stack.
@@ -178,7 +170,6 @@ class Stack(object):
             return self.min_stack[-1]
 
 
-
 if __name__ == "__main__":
     import doctest
 
@@ -187,4 +178,3 @@ if __name__ == "__main__":
     if not result.failed:
         print("ALL TESTS PASSED. GOOD WORK!")
     print
-

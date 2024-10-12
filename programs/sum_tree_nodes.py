@@ -30,19 +30,19 @@ def num_nodes(tree):
     nodes = 1
 
     if tree is None:
-      return 0
+        return 0
 
     for child in tree.children:
-      nodes += num_nodes(child)
-
+        nodes += num_nodes(child)
 
     return nodes
 
 
-
 if __name__ == "__main__":
     import doctest
+
     results = doctest.testmod()
 
     if not results.failed:
-        print "ALL TESTS PASSED"
+        print
+        "ALL TESTS PASSED"

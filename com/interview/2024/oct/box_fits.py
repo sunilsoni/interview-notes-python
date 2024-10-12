@@ -5,7 +5,7 @@ class Solution:
 
         def box_fits(box, rectangle):
             return (box[0] <= rectangle[0] and box[1] <= rectangle[1]) or \
-                   (box[1] <= rectangle[0] and box[0] <= rectangle[1])
+                (box[1] <= rectangle[0] and box[0] <= rectangle[1])
 
         for op in operations:
             if op[0] == 0:  # Create rectangle
@@ -15,6 +15,7 @@ class Solution:
                 results.append(fits_all)
 
         return results
+
 
 # Test cases
 s = Solution()

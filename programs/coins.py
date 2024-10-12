@@ -19,10 +19,8 @@ def coins(num_coins):
     True
     """
 
-
     combos = set()
     coins = [1, 10]
-
 
     def _coins(coins_left, combos, total):
 
@@ -34,7 +32,6 @@ def coins(num_coins):
             _coins(coins_left - 1, combos, total + coin)
 
     _coins(num_coins, combos, 0)
-
 
     return combos
 
@@ -60,14 +57,11 @@ def coins_2(num_coins):
     True
     """
 
-
     combos = set()
     dimes = 10
     pennies = 1
 
-
     def _coins_2(coins_left, combos, total):
-
         if not coins_left:
             combos.add(total)
             return
@@ -77,15 +71,12 @@ def coins_2(num_coins):
 
     _coins_2(num_coins, combos, 0)
 
-
     return combos
-
-
-
 
 
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if not results.failed:

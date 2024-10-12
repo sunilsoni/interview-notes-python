@@ -31,6 +31,7 @@ def solution(operations):
                 result.append(False)
     return result
 
+
 # Test cases to verify the solution
 
 def test_solution():
@@ -65,6 +66,7 @@ def test_solution():
     print("Test case 5 passed.")
 
     print("All test cases passed.")
+
 
 # Run the test cases
 test_solution()

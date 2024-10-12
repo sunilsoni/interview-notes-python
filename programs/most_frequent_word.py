@@ -29,16 +29,14 @@ def most_frequent_word(str):
             most_frequent_words.append(word)
 
     for word in sorted(most_frequent_words):
-        print word,
-
-
-
-
-
+        print
+        word,
 
 
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
     if not results.failed:
-        print 'All tests passed!'
+        print
+        'All tests passed!'

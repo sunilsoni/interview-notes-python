@@ -8,12 +8,12 @@ def has_balanced_brackets(phrase):
     string contains balanced (), {}, [], and/or <>.
     """
     brackets = {
-                ']': '[',
-                '}': '{',
-                '[': '[',
-                '>': '<',
-                ')': '('
-                }
+        ']': '[',
+        '}': '{',
+        '[': '[',
+        '>': '<',
+        ')': '('
+    }
     open_brackets = set(['[', '{', '[', '<', '('])
     close_brackets = set([']', '}', ']', '>', ')'])
     seen = []
@@ -27,10 +27,8 @@ def has_balanced_brackets(phrase):
             else:
                 return False
 
-
     if seen == []:
         return True
-
 
 
 class test_solutions(unittest.TestCase):
@@ -46,7 +44,6 @@ class test_solutions(unittest.TestCase):
         self.assertFalse(has_balanced_brackets(">"))
         self.assertFalse(has_balanced_brackets("(This has {too many} ) closers. )"))
         self.assertFalse(has_balanced_brackets("<{Not Ok>}"))
-
 
 
 if __name__ == "__main__":

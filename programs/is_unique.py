@@ -45,5 +45,6 @@ class Testing(unittest.TestCase):
         self.assertEqual(is_unique('1qwerty1'), False)
         self.assertEqual(is_unique('poiu$asdf$'), False)
 
+
 if __name__ == '__main__':
     unittest.main()

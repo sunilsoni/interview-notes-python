@@ -6,31 +6,25 @@ class MinHeap(object):
     def __init__(self):
         self.storage = []
 
-
     def swap(self, a, b):
         self.storage[a], self.storage[b] = self.storage[b], self.storage[a]
-
 
     def size(self):
         return len(self.storage)
 
-
     def peak(self):
         return self.storage[0]
-
 
     def insert(self, value):
         self.storage.append(value)
         index = self.size() - 1
         self.bubbleUp(index)
 
-
     def get_parent(self, child):
         if child % 2 == 0:
-            return (child - 2)/2
+            return (child - 2) / 2
         else:
-            return (child - 1)/2
-
+            return (child - 1) / 2
 
     def bubbleUp(self, child):
         parent = self.get_parent(child)
@@ -40,14 +34,12 @@ class MinHeap(object):
             child = parent
             parent = self.get_parent(child)
 
-
     def remove_peak(self):
-        self.swap(0, self.size()-1)
+        self.swap(0, self.size() - 1)
         min_elem = self.storage.pop()
         self.bubbleDown(0)
 
         return min_elem
-
 
     def get_child(self, parent):
         child1 = 2 * parent + 1
@@ -62,7 +54,6 @@ class MinHeap(object):
         else:
             return child2
 
-
     def bubbleDown(self, parent):
         child = self.get_child(parent)
 
@@ -70,7 +61,6 @@ class MinHeap(object):
             self.swap(child, parent)
             parent = child
             child = self.get_child(parent)
-
 
     def remove(self, item):
         last_index = self.size() - 1
@@ -91,11 +81,8 @@ class MinHeap(object):
 
         return removed_item
 
-
-
     def __repr__(self):
         return '<storage = {}>'.format(self.storage)
-
 
 
 class Testing(unittest.TestCase):
@@ -124,12 +111,12 @@ class Testing(unittest.TestCase):
         self.test.insert(11)
         self.test.insert(9)
         self.test.insert(2)
-        print self.test
+        print
+        self.test
         self.assertEqual(repr(self.test), '<storage = [1, 2, 9, 4, 8, 11, 10, 7]>', 'did not insert new value properly')
 
     def test_get_parent(self):
         self.assertEqual(self.test.get_parent(7), 3, 'getting child\'s parent index is incorrect')
-
 
     def test_bubbleUp(self):
         self.test.insert(1)
@@ -141,7 +128,6 @@ class Testing(unittest.TestCase):
         self.test.insert(9)
         self.assertEqual(repr(self.test), '<storage = [1, 2, 4, 5, 8, 6, 10, 7, 9]>', 'did not bubble up correctly')
 
-
     def test_remove_peak(self):
         self.test.storage = [1, 2, 4, 11]
         self.assertEqual(self.test.remove_peak(), 1, 'did not remove correct value')
@@ -149,10 +135,8 @@ class Testing(unittest.TestCase):
         self.assertEqual(self.test.remove_peak(), 4, 'did not remove correct value')
         self.assertEqual(self.test.remove_peak(), 11, 'did not remove correct value')
 
-
     def test_get_child(self):
         self.assertEqual(self.test.get_child(0), 1, 'did not select the right child index')
-
 
     def test_bubbleDown(self):
         self.test.storage = [1, 2, 4, 11]
@@ -164,7 +148,6 @@ class Testing(unittest.TestCase):
         self.assertEqual(repr(self.test), '<storage = [11]>', 'did not bubble down correctly')
         self.test.remove_peak()
         self.assertEqual(repr(self.test), '<storage = []>', 'did not bubble down correctly')
-
 
     def test_remove(self):
         self.assertEqual(self.test.remove(8), 8, 'did not remove correct value')

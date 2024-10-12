@@ -21,6 +21,7 @@ class Solution:
     def solution(self, a2b, b2a, trips):
         return self.calculate_round_trips(a2b, b2a, trips)
 
+
 def main():
     sol = Solution()
 
@@ -42,6 +43,7 @@ def main():
         print(f"Expected: {expected}")
         print("Pass" if result == expected else "Fail")
         print()
+
 
 if __name__ == "__main__":
     main()

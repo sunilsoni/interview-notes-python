@@ -23,10 +23,11 @@ def sum_list(nums):
     return nums[0] + sum_list(nums[1:])
 
 
-
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:
-        print "ALL TESTS PASSED!"
+        print
+        "ALL TESTS PASSED!"

@@ -29,9 +29,9 @@ def add_to_zero(nums):
     return False
 
 
-
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:

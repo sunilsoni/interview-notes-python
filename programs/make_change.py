@@ -19,10 +19,8 @@ def make_change(amount, denominations, index=0):
 
     """
 
-
     # time:
     # space:
-
 
     if amount == 0:
         return 1
@@ -37,16 +35,17 @@ def make_change(amount, denominations, index=0):
 
     combos = 0
 
-    while amount >=0:
-        combos += make_change(amount, denominations, index+1)
-        amount -=current_coin
+    while amount >= 0:
+        combos += make_change(amount, denominations, index + 1)
+        amount -= current_coin
 
     return combos
 
 
-
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
     if not results.failed:
-        print 'All tests passed!'
+        print
+        'All tests passed!'

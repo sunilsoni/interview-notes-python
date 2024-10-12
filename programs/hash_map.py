@@ -1,5 +1,6 @@
 """ Create a hash map. """
 
+
 class HashMap(object):
 
     def __init__(self):
@@ -7,7 +8,6 @@ class HashMap(object):
 
         # In a 64-bit system, creates 64 lists in a list
         self.hash = [[] for x in range(64)]
-
 
     def hashing(self, key):
         """ Hashes a key and returns the hashed index. """
@@ -23,7 +23,6 @@ class HashMap(object):
 
         return index
 
-
     def find_val(self, key):
         """ Finds the key and returns the value in hashmap, if none returns keyerror. """
 
@@ -31,7 +30,7 @@ class HashMap(object):
         position = self.hash[index]
 
         if position != []:
-        # Loops through items at hashed index to return tuple value
+            # Loops through items at hashed index to return tuple value
             for item in position:
                 if item[0] == key:
                     return item[1]
@@ -39,7 +38,6 @@ class HashMap(object):
 
         else:
             raise KeyError('Key does not exist.')
-
 
     def update_or_add(self, key, val):
         """ Updates or adds a new key value pair. """
@@ -62,7 +60,6 @@ class HashMap(object):
         else:
             position.append((key, value))
 
-
     def delete(self, key):
         """ Takes a key and deletes the key and value from the hashmap. """
 
@@ -78,6 +75,3 @@ class HashMap(object):
 
         else:
             raise KeyError('Key does not exist.')
-
-
-

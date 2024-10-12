@@ -21,7 +21,6 @@ Guaranteed constraints:
 [output] integer"""
 
 
-
 def zigzag(a):
     """
     >>> zigzag([9, 8, 8, 5, 3, 5, 3, 2, 8, 6])
@@ -59,11 +58,10 @@ def zigzag(a):
     if len(a) == 2 and a[0] != a[1]:
         return len(a)
 
-
-    for i in range(len(a)-2):
+    for i in range(len(a) - 2):
         prev = a[i]
-        curr = a[i+1]
-        nxt = a[i+2]
+        curr = a[i + 1]
+        nxt = a[i + 2]
 
         if (prev < curr and curr > nxt) or (prev > curr and curr < nxt):
             if nxt == a[-1]:
@@ -79,7 +77,6 @@ def zigzag(a):
             curr_length = 1
 
     return longest
-
 
 
 def zigzag_recursive(a):
@@ -113,7 +110,6 @@ def zigzag_recursive(a):
     # time: O(n)
     # space: O(n)
 
-
     if len(a) < 2:
         return len(a)
 
@@ -126,12 +122,12 @@ def zigzag_recursive(a):
 
     while good and i < len(a) - 1:
         curr = a[i]
-        prev = a[i-1]
-        nxt = a[i+1]
+        prev = a[i - 1]
+        nxt = a[i + 1]
 
         if (prev < curr and curr > nxt) or (prev > curr and curr < nxt):
-            i +=1
-            if i == len(a)-1:
+            i += 1
+            if i == len(a) - 1:
                 longest += 1
         else:
             good = False
@@ -140,10 +136,11 @@ def zigzag_recursive(a):
     return max(longest, zigzag_recursive(a[i:]))
 
 
-
 if __name__ == "__main__":
     import doctest
+
     results = doctest.testmod()
 
     if not results.failed:
-        print "All tests passed"
+        print
+        "All tests passed"

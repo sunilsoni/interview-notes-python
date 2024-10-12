@@ -29,15 +29,15 @@ def get_max_profit(prices):
     # Runtime: O(n^2)
     # Spacetime: O(n)
 
-
     max_profit = prices[1] - prices[0]
 
     for a in range(len(prices)):  # O(n)
         for b in range(a + 1, len(prices)):  # O(n)
             gain_loss = prices[b] - prices[a]
             if gain_loss > max_profit:
-              max_profit = gain_loss
-    print max_profit
+                max_profit = gain_loss
+    print
+    max_profit
 
 
 def get_max_profit_optimized(prices):
@@ -68,10 +68,8 @@ def get_max_profit_optimized(prices):
     0
     """
 
-
     # Runtime: O(n)
     # Spacetime: O(1)
-
 
     max_profit = prices[1] - prices[0]
     low = prices[0]
@@ -83,15 +81,18 @@ def get_max_profit_optimized(prices):
             continue
 
         potential_profit = i - low
-        max_profit= max(max_profit, potential_profit)
+        max_profit = max(max_profit, potential_profit)
         low = min(low, i)
 
-    print max_profit
+    print
+    max_profit
 
 
 if __name__ == '__main__':
     import doctest
+
     results = doctest.testmod()
 
     if results.failed == 0:
-        print "ALL TESTS PASSED"
+        print
+        "ALL TESTS PASSED"

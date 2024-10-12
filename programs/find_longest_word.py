@@ -1,7 +1,6 @@
 import unittest
 
 
-
 def find_longest_word(words):
     """Return longest word in list of words."""
 
@@ -18,7 +17,6 @@ class test_solution(unittest.TestCase):
     def test_find_longest_word(self):
         self.assertEqual(find_longest_word(["hi", "hello"]), 5)
         self.assertEqual(find_longest_word(["Balloonicorn", "Hackbright"]), 12)
-
 
 
 if __name__ == "__main__":

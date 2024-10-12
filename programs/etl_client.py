@@ -1,5 +1,6 @@
 import json
 
+
 class ETLClient:
     def run(self, service, max_requests):
         """
@@ -59,10 +60,10 @@ class ETLClient:
         documents = []
 
         documents.append({
-                            'doc-count': 0,
-                            'error-count': 0,
-                            'docs': {}
-                            })
+            'doc-count': 0,
+            'error-count': 0,
+            'docs': {}
+        })
 
         for i in range(0, max_requests):
 
@@ -95,8 +96,8 @@ class ETLClient:
                         doc_id = event['document-id']
                         docs = documents[0]['docs']
                         for docid, data in docs.items():
-                          if docid == doc_id:
-                              del docs[docid]
+                            if docid == doc_id:
+                                del docs[docid]
 
                         # subtracts 1 from number of documents
                         documents[0]['doc-count'] = documents[0].get('doc-count') - 1
@@ -110,7 +111,6 @@ class ETLClient:
 
         return json.dumps(documents[0])
 
-
     def remove_words(self, string):
         # sanitizes string data in documents
 
@@ -122,7 +122,6 @@ class ETLClient:
                 words.remove(word)
 
         return words
-
 
 
 class Test(unittest.TestCase):
@@ -144,20 +143,20 @@ class Test(unittest.TestCase):
                 'doc-count': 2,
                 'error-count': 0,
                 'docs': {
-                'f01dba4999266bff87400756e8830528': "aliquid cum ut labore nesciunt voluptatibus eius fugiat sunt not error nulla vitae rerum".split(),
-                '87e8d5ee79eb735b2e4e4fb88a9438e9': "nihil natus voluptatibus aperiam quo".split()
+                    'f01dba4999266bff87400756e8830528': "aliquid cum ut labore nesciunt voluptatibus eius fugiat sunt not error nulla vitae rerum".split(),
+                    '87e8d5ee79eb735b2e4e4fb88a9438e9': "nihil natus voluptatibus aperiam quo".split()
                 }
             }),
             json.dumps({
                 'doc-count': 2,
                 'error-count': 0,
                 'docs': {
-                'f01dba4999266bff87400756e8830528': "aliquid cum ut labore nesciunt voluptatibus eius fugiat sunt error nulla vitae rerum".split(),
-                '87e8d5ee79eb735b2e4e4fb88a9438e9': "nihil natus voluptatibus aperiam quo".split()
+                    'f01dba4999266bff87400756e8830528': "aliquid cum ut labore nesciunt voluptatibus eius fugiat sunt error nulla vitae rerum".split(),
+                    '87e8d5ee79eb735b2e4e4fb88a9438e9': "nihil natus voluptatibus aperiam quo".split()
                 }
             })
         ]
-        self.assertIn(r,expect)
+        self.assertIn(r, expect)
 
     def test_req_3(self):
         r = ETLClient().run(DocumentService(2), 2)
@@ -179,7 +178,7 @@ class Test(unittest.TestCase):
                 }
             })
         ]
-        self.assertIn(r,expect)
+        self.assertIn(r, expect)
 
     def _ordered(self, obj):
         """
@@ -202,7 +201,7 @@ class Test(unittest.TestCase):
                 '87e8d5ee79eb735b2e4e4fb88a9438e9': "nihil natus voluptatibus aperiam quo".split()
             }
         })
-        self.assertIn(self._ordered(r),self._ordered(expect))
+        self.assertIn(self._ordered(r), self._ordered(expect))
 
     def test_req_5(self):
         r = ETLClient().run(DocumentService(2), 3)
@@ -215,7 +214,7 @@ class Test(unittest.TestCase):
                 '43e18d33e6b052a1f0b04d22b60f2059': "non occaecati accusantium animi eius sit placeat fugit dolor voluptate iure a".split()
             }
         })
-        self.assertIn(self._ordered(r),self._ordered(expect))
+        self.assertIn(self._ordered(r), self._ordered(expect))
 
     def test_req_6(self):
         r = ETLClient().run(DocumentService(6), 3)
@@ -227,7 +226,7 @@ class Test(unittest.TestCase):
                 '9491e81a43723db0c05e94662f06b6f3': 'ut accusantium recusandae animi velit labore id iure voluptate vel enim quo consequatur saepe'.split()
             }
         })
-        self.assertIn(self._ordered(r),self._ordered(expect))
+        self.assertIn(self._ordered(r), self._ordered(expect))
 
     def test_req_7(self):
         r = ETLClient().run(DocumentService(6), 9)
@@ -237,4 +236,4 @@ class Test(unittest.TestCase):
             'docs': {
             }
         })
-        self.assertIn(self._ordered(r),self._ordered(expect))
+        self.assertIn(self._ordered(r), self._ordered(expect))

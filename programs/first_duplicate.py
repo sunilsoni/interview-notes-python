@@ -27,6 +27,7 @@ Guaranteed constraints:
 The element in a that occurs in the array more than once and has the minimal index for its second occurrence. If there are no such elements, return -1.
 """
 
+
 def first_duplicate(a):
     """
 
@@ -56,14 +57,13 @@ def first_duplicate(a):
     lowest_index = len(a)
     for i in range(len(a)):
         num = a[i]
-        if num in a[i+1:]:
-            index = a[i+1:].index(num) + i + 1
+        if num in a[i + 1:]:
+            index = a[i + 1:].index(num) + i + 1
             if index < lowest_index:
                 lowest_index = index
 
     if lowest_index < len(a):
         return a[lowest_index]
-
 
     return -1
 
@@ -93,22 +93,21 @@ def first_duplicate_optimized(arr):
     # time: O(n)
     # space: O(1)
 
-
     for i in range(len(arr)):
 
-        value = arr[abs(arr[i])-1]
+        value = arr[abs(arr[i]) - 1]
 
         if value >= 0:
-            arr[abs(arr[i])-1] = -value
+            arr[abs(arr[i]) - 1] = -value
         else:
             return abs(arr[i])
 
     return -1
 
 
-
 if __name__ == "__main__":
     import doctest
+
     results = doctest.testmod()
 
     if not results.failed:
