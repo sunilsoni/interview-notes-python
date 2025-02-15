@@ -1,5 +1,5 @@
-from collections import Counter
 import itertools
+from collections import Counter
 
 
 def count_zero_sum_tuples(A, B, C, D):

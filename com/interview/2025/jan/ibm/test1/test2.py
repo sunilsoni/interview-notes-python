@@ -83,6 +83,7 @@ The lexicographically smallest possible priority sequence is `[4, 8, 6, 9, 3]`.
 
 """
 
+
 class GetOptimalPrioritySolution:
 
     def getOptimalPriority(self, priority):

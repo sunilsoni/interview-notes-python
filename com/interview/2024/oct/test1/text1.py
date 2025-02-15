@@ -1,5 +1,6 @@
 import re
 
+
 class Solution:
     def solution(self, text):
         words = text.strip().split()
@@ -82,6 +83,7 @@ def run_tests():
         print("\nAll test cases passed!")
     else:
         print("\nSome test cases failed.")
+
 
 if __name__ == "__main__":
     run_tests()

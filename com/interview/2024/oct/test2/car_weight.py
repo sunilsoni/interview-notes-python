@@ -44,6 +44,7 @@ class Solution {
 - When a driver turns back, all drivers behind them move closer to the bridge, and the driver who turns back does not attempt to cross again.
 """
 
+
 def solution(U, weight):
     cars_to_turn_back = 0
     bridge = []

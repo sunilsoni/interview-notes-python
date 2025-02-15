@@ -4,6 +4,7 @@ class Item:
     """
     Represents an individual inventory item with various attributes.
     """
+
     def __init__(self, stock, threshold, freshness=None, color=None):
         # Ensure stock and threshold are non-negative
         self.stock = stock if stock >= 0 else 0
@@ -17,11 +18,13 @@ class Item:
         self.freshness = freshness
         self.color = color
 
+
 class InventoryManager:
     """
     A simple inventory management system to add items with their attributes
     and to retrieve those attributes.
     """
+
     def __init__(self):
         # Initialize an empty dictionary to hold inventory items
         self.items = {}
@@ -78,6 +81,7 @@ class InventoryManager:
             return self.items[item_name].color
         return None
 
+
 def main():
     # Create an instance of InventoryManager
     manager = InventoryManager()
@@ -116,14 +120,18 @@ def main():
     # Test 5: Large data insertion
     large_data_count = 5000
     for i in range(large_data_count):
-        manager.add_item(f"Item_{i}", i, i//2, freshness=f"Fresh_{i}", color="Color_"+str(i%5))
+        manager.add_item(f"Item_{i}", i, i // 2, freshness=f"Fresh_{i}", color="Color_" + str(i % 5))
     # Verify a sample from the large dataset
     sample_index = 4999
     sample_item = f"Item_{sample_index}"
     print("Test 5 - Large Data Stock:", "PASS" if manager.get_stock(sample_item) == sample_index else "FAIL")
-    print("Test 5 - Large Data Threshold:", "PASS" if manager.get_threshold(sample_item) == sample_index//2 else "FAIL")
-    print("Test 5 - Large Data Freshness:", "PASS" if manager.get_freshness(sample_item) == f"Fresh_{sample_index}" else "FAIL")
-    print("Test 5 - Large Data Color:", "PASS" if manager.get_color(sample_item) == "Color_"+str(sample_index%5) else "FAIL")
+    print("Test 5 - Large Data Threshold:",
+          "PASS" if manager.get_threshold(sample_item) == sample_index // 2 else "FAIL")
+    print("Test 5 - Large Data Freshness:",
+          "PASS" if manager.get_freshness(sample_item) == f"Fresh_{sample_index}" else "FAIL")
+    print("Test 5 - Large Data Color:",
+          "PASS" if manager.get_color(sample_item) == "Color_" + str(sample_index % 5) else "FAIL")
+
 
 if __name__ == "__main__":
     main()

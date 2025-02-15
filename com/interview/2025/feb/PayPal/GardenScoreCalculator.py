@@ -128,6 +128,7 @@ calc_score(garden_11) => 4
 - **c** - the number of columns in the input garden
 """
 
+
 class GardenScoreCalculator:
     @staticmethod
     def calc_score(garden):

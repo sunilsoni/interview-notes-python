@@ -1,4 +1,3 @@
-
 """
 Question 1: You are given an m x n matrix board containing letters 'X' and 'O', capture regions that are surrounded:
 
@@ -15,6 +14,8 @@ A surrounded region is captured by replacing all 'O's with 'X's in the input mat
 `[["X", "X", "X", "X"], ["X", "X", "X", "X"], ["X", "X", "X", "X"], ["X", "O", "X", "X"]]`
 
 """
+
+
 def solve(board):
     if not board or not board[0]:
         return

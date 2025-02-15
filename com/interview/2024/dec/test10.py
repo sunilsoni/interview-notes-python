@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 class FourSumZero:
     @staticmethod
     def four_sum_count(A, B, C, D):
@@ -95,6 +96,7 @@ class FourSumZero:
                 print(f"Test Case {i}: FAIL")
                 print(f"Expected Output: {expected}")
                 print(f"Actual Output: {result}")
+
 
 if __name__ == "__main__":
     FourSumZero.run_tests()

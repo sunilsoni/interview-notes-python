@@ -60,6 +60,8 @@ def solution(cityLine):
 
 This function should compute the **largest square area** that can be formed given the heights of the skyscrapers.
 """
+
+
 def solution(cityLine):
     """
     Computes the area of the largest square that can fit within the cityLine skyline.

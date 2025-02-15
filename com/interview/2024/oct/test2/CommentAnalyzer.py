@@ -1,6 +1,6 @@
+import time
 from collections import Counter
 from typing import Optional, Dict, List
-import time
 
 """from typing import Dict, List, Optional
 The bookstore gathered a list of customer comments from each shop location, and wants to find the most common comment across all locations (ignoring duplicates from the same location).• If multiple comments appear the same number of times, return-any one of them.
@@ -34,6 +34,8 @@ input_3 = f
 "Blue Road":
 ["Rustic feel"],
 }"""
+
+
 class CommentAnalyzer:
     @staticmethod
     def most_common_comment(reviews: Dict[str, List[str]]) -> Optional[str]:

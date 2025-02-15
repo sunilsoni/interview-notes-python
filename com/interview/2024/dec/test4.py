@@ -15,6 +15,7 @@ Finally delete "ddd"
 Case2: input: "azxxzy" k = 2
 output: ay"""
 
+
 class Solution:
     def removeDuplicates(self, s: str, k: int) -> str:
         """

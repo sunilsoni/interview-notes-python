@@ -1,5 +1,5 @@
-from collections import defaultdict, Counter
 import re
+from collections import Counter
 
 """
 
@@ -29,6 +29,8 @@ reviews = [
 #
 # 3 - How would you scale it to n-grams?
 """
+
+
 class ReviewAnalyzer:
     def __init__(self):
         self.unigram_counts = Counter()

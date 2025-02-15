@@ -51,15 +51,15 @@ def test_find_items_over_weight():
 
     # Container 1 with items
     c1 = Container("c1")
-    c1.add_item(Item("item1", "Item One", 10, 45))   # <= 50 kg
-    c1.add_item(Item("item2", "Item Two", 5, 60))    # > 50 kg
-    c1.add_item(Item("item3", "Item Three", 2, 100)) # > 50 kg
+    c1.add_item(Item("item1", "Item One", 10, 45))  # <= 50 kg
+    c1.add_item(Item("item2", "Item Two", 5, 60))  # > 50 kg
+    c1.add_item(Item("item3", "Item Three", 2, 100))  # > 50 kg
 
     # Container 2 with child containers
     c2 = Container("c2")
     c21 = Container("c21")
-    c21.add_item(Item("item4", "Item Four", 1, 50))   # == 50 kg (not over)
-    c21.add_item(Item("item5", "Item Five", 1, 51))   # > 50 kg
+    c21.add_item(Item("item4", "Item Four", 1, 50))  # == 50 kg (not over)
+    c21.add_item(Item("item5", "Item Five", 1, 51))  # > 50 kg
     c2.add_container(c21)
 
     # Container 3 empty

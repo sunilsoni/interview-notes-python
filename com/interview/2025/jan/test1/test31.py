@@ -40,9 +40,9 @@ def main():
     # Define test cases (input -> expected_output)
     # Format: (base_type, size, toppings_list, expected_price)
     test_cases = [
-        ("thin", "small", ["cheese"], 7.50),     # as per example: (8 + 2) * 0.75 = 7.5
-        ("thin", "medium", ["cheese"], 10.00),   # as per example: (8 + 2) * 1.0 = 10.0
-        ("regular", "small", [], 5.25),          # (7 + 0) * 0.75 = 5.25
+        ("thin", "small", ["cheese"], 7.50),  # as per example: (8 + 2) * 0.75 = 7.5
+        ("thin", "medium", ["cheese"], 10.00),  # as per example: (8 + 2) * 1.0 = 10.0
+        ("regular", "small", [], 5.25),  # (7 + 0) * 0.75 = 5.25
         ("regular", "large", ["cheese"], 18.0),  # (7 + 2) * 2 = 18.0
         # Add more variations
     ]

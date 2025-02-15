@@ -52,6 +52,8 @@ def solution(commands):
     # Your code here
 ```
 """
+
+
 def solution(commands):
     """
     Simulates a sequence of cd commands to determine the final working directory.

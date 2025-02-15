@@ -46,6 +46,7 @@ class PizzaBase:
         self.base_type = base_type
         self.price = self.base_prices[base_type]
 
+
 class PizzaSize:
     size_multipliers = {
         'small': 0.75,
@@ -60,6 +61,7 @@ class PizzaSize:
         self.size_type = size_type
         self.multiplier = self.size_multipliers[size_type]
 
+
 class Topping:
     topping_prices = {
         'cheese': 2.0,
@@ -71,6 +73,7 @@ class Topping:
             raise ValueError(f"Invalid topping: {topping_name}")
         self.topping_name = topping_name
         self.price = self.topping_prices[topping_name]
+
 
 class Pizza:
     def __init__(self, base, size, toppings=None):
@@ -86,6 +89,7 @@ class Pizza:
         toppings_price = sum(topping.price for topping in self.toppings)
         total_price = (base_price + toppings_price) * self.size.multiplier
         return round(total_price, 2)  # Rounded to 2 decimal places
+
 
 # 4. Testing:
 
@@ -170,6 +174,7 @@ def main():
             else:
                 print(f"Test {idx + 1} [{test['description']}]: FAIL (Unexpected error: {e})")
     print(f"{passed_tests} out of {len(test_cases)} tests passed.")
+
 
 if __name__ == "__main__":
     main()

@@ -40,6 +40,7 @@ In a typing practice application, you need to validate the consistency of user i
 
 ---"""
 
+
 def solution(typedText):
     """
     Computes the difference between the number of uppercase and lowercase letters in the input string.

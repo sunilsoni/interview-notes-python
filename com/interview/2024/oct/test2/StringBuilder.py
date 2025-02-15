@@ -28,6 +28,7 @@ Write an efficient algorithm for the following assumptions:
 
 """
 
+
 def solution(S, K):
     # Count the frequency of each letter in all strings
     letter_counts = Counter(''.join(S))

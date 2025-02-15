@@ -1,6 +1,5 @@
-import math
-
 import math  # Import math library for mathematical functions (e.g., math.ceil)
+
 
 def min_delivery_speed(packages, h):
     # Define a helper function to check if all packages can be delivered within h hours at speed k.
@@ -20,10 +19,10 @@ def min_delivery_speed(packages, h):
         mid = (low + high) // 2  # Calculate the mid value of current search bounds
         # Check if mid speed is sufficient to deliver all packages within h hours
         if can_deliver_with_speed(mid):
-            result = mid         # Update result to current mid because it's a potential answer
-            high = mid - 1       # Search for a smaller valid speed in the lower half
+            result = mid  # Update result to current mid because it's a potential answer
+            high = mid - 1  # Search for a smaller valid speed in the lower half
         else:
-            low = mid + 1        # If not sufficient, try a larger speed in the upper half
+            low = mid + 1  # If not sufficient, try a larger speed in the upper half
 
     # After exiting loop, result contains the minimum k that satisfies the condition
     return result
@@ -35,9 +34,9 @@ def run_tests():
         # Provided test case
         {"packages": [3, 6, 7, 11], "h": 8, "expected": 4},
         # Edge cases
-        {"packages": [1], "h": 1, "expected": 1},                # Single location, h equals packages
-        {"packages": [1000000], "h": 1000000, "expected": 1},    # High h, low speed needed
-        {"packages": [1000000], "h": 1, "expected": 1000000},    # One location but one hour
+        {"packages": [1], "h": 1, "expected": 1},  # Single location, h equals packages
+        {"packages": [1000000], "h": 1000000, "expected": 1},  # High h, low speed needed
+        {"packages": [1000000], "h": 1, "expected": 1000000},  # One location but one hour
         {"packages": [30, 11, 23, 4, 20], "h": 6, "expected": 23},  # Another sample scenario
 
         # Large data test
@@ -51,6 +50,7 @@ def run_tests():
         result = min_delivery_speed(packages, h)
         outcome = "PASS" if result == expected else "FAIL"
         print(f"Test case {idx + 1}: {outcome} (Expected: {expected}, Got: {result})")
+
 
 if __name__ == "__main__":
     run_tests()

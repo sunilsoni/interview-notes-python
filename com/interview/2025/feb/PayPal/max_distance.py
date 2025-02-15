@@ -40,6 +40,8 @@ print("Hello, world!")
 print("This is a fully functioning Python 3 environment.")
 ```
 """
+
+
 # File: FlowerGarden.py
 
 def max_distance(garden):

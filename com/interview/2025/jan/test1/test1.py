@@ -28,6 +28,7 @@ class InventoryManager:
         """
         return self.items.get(item_name, -1)
 
+
 def main():
     # Create an instance of InventoryManager
     manager = InventoryManager()
@@ -51,19 +52,22 @@ def main():
     # 3) Check an item that does not exist
     result = manager.get_stock("Keyboard")  # Not added
     expected = -1
-    print("Test 3 - Get Non-existent Item:", "PASS" if result == expected else f"FAIL (Expected {expected}, got {result})")
+    print("Test 3 - Get Non-existent Item:",
+          "PASS" if result == expected else f"FAIL (Expected {expected}, got {result})")
 
     # 4) Add an item with negative stock
     manager.add_item("Monitor", -5)
     result = manager.get_stock("Monitor")
     expected = 0  # We handle negative stock by defaulting to 0 in this example
-    print("Test 4 - Add Item with Negative Stock:", "PASS" if result == expected else f"FAIL (Expected {expected}, got {result})")
+    print("Test 4 - Add Item with Negative Stock:",
+          "PASS" if result == expected else f"FAIL (Expected {expected}, got {result})")
 
     # 5) Add existing item with new stock
     manager.add_item("Laptop", 100)  # Update the existing "Laptop" stock
     result = manager.get_stock("Laptop")
     expected = 100
-    print("Test 5 - Update Existing Item Stock:", "PASS" if result == expected else f"FAIL (Expected {expected}, got {result})")
+    print("Test 5 - Update Existing Item Stock:",
+          "PASS" if result == expected else f"FAIL (Expected {expected}, got {result})")
 
     # 6) Large Data Test
     # Attempting to add a large number of items to confirm it can handle scale
@@ -74,7 +78,9 @@ def main():
     # Just check a random sample
     result = manager.get_stock("Item_9999")
     expected = 9999
-    print("Test 6 - Large Data Handling:", "PASS" if result == expected else f"FAIL (Expected {expected}, got {result})")
+    print("Test 6 - Large Data Handling:",
+          "PASS" if result == expected else f"FAIL (Expected {expected}, got {result})")
+
 
 if __name__ == "__main__":
     main()

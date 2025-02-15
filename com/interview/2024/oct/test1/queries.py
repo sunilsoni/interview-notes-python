@@ -40,6 +40,8 @@ Guaranteed constraints:
 Return a list of size queries. length such that the ith element contains the number of house segments (described above) after the ith query.
 
 """
+
+
 def solution(houses, queries):
     # Sort houses for efficient processing
     houses.sort()

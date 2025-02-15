@@ -124,6 +124,7 @@ filterRanges = [[10, 17], [13, 15], [13, 17]]
 - The common pass-through range is (6, 15).
 - Frequencies 6, 7, and 12 pass through."""
 
+
 def countSignals(frequencies, filterRanges):
     # Find the common range across all filters
     common_min = max(filter_range[0] for filter_range in filterRanges)

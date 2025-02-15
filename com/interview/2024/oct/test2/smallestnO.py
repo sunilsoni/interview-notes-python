@@ -1,5 +1,5 @@
-from typing import Optional
 import time
+from typing import Optional
 
 """
 
@@ -41,6 +41,8 @@ assert (rearrange_digits (-79). • print ("Passed" )
 # Split strings: val split, list(val)
 # Join strings: ""-join (val)
 """
+
+
 class DigitRearranger:
     @staticmethod
     def rearrange_digits(number: int) -> Optional[int]:

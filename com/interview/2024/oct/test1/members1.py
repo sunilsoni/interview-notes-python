@@ -1,5 +1,6 @@
 import re
 
+
 def solution(members, messages):
     """
     Calculates the mention statistics for each member in the group chat.
@@ -36,6 +37,7 @@ def solution(members, messages):
     # Format the output
     result = [f"{member}={count}" for member, count in sorted_members]
     return result
+
 
 def run_tests():
     """
@@ -86,7 +88,7 @@ def run_tests():
         # Test case 7: Large data input
         (
             [f"id{i}" for i in range(1, 51)],
-            [f"Message {j} @id{j%50+1},@id{(j+1)%50+1}" for j in range(1, 101)],
+            [f"Message {j} @id{j % 50 + 1},@id{(j + 1) % 50 + 1}" for j in range(1, 101)],
             None  # We'll compute the expected output in the test
         ),
         # Test case 8: Mentions at the start and end of messages
@@ -118,8 +120,8 @@ def run_tests():
         if expected_output is None:
             mention_counts = {f"id{i}": 0 for i in range(1, 51)}
             for j in range(1, 101):
-                mention_counts[f"id{j%50+1}"] += 1
-                mention_counts[f"id{(j+1)%50+1}"] += 1
+                mention_counts[f"id{j % 50 + 1}"] += 1
+                mention_counts[f"id{(j + 1) % 50 + 1}"] += 1
             sorted_members = sorted(
                 mention_counts.items(),
                 key=lambda x: (-x[1], x[0])
@@ -140,6 +142,7 @@ def run_tests():
         print("\nAll test cases passed!")
     else:
         print("\nSome test cases failed.")
+
 
 if __name__ == "__main__":
     run_tests()

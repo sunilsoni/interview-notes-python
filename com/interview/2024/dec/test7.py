@@ -18,6 +18,7 @@ items that meet some conditions, so, for other purposes, I want to find a list o
 For auditing purposes, as a software engineer I want to query for items over 50kgs
 """
 
+
 class Item:
     def __init__(self, item_id, name, quantity, weight):
         self.id = item_id

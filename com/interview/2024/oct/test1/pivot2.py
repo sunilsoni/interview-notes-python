@@ -35,6 +35,8 @@ Return a new array, where the jth element is 0, 1, or -1, based on the algorithm
 
 def solution (numbers, pivot):
 """
+
+
 def solution(numbers, pivot):
     """
     This function takes an array of integers 'numbers' and an integer 'pivot', and returns a new array where:
@@ -51,6 +53,7 @@ def solution(numbers, pivot):
         else:
             result.append(-1)
     return result
+
 
 def run_tests():
     """
@@ -100,10 +103,10 @@ def run_tests():
     for idx, (numbers, pivot, expected) in enumerate(test_cases):
         output = solution(numbers, pivot)
         if output == expected:
-            print(f"Test case {idx+1}: PASS")
+            print(f"Test case {idx + 1}: PASS")
         else:
             all_passed = False
-            print(f"Test case {idx+1}: FAIL")
+            print(f"Test case {idx + 1}: FAIL")
             print(f"  Input numbers: {numbers}")
             print(f"  Input pivot: {pivot}")
             print(f"  Expected output: {expected}")
@@ -113,6 +116,7 @@ def run_tests():
         print("\nAll test cases passed!")
     else:
         print("\nSome test cases failed.")
+
 
 if __name__ == "__main__":
     run_tests()

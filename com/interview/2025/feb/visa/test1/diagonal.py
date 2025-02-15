@@ -36,7 +36,7 @@ def solution(matrix):
 
                     # Move along the diagonal while cells match the pattern
                     while 0 <= rr < n and 0 <= cc < m \
-                          and matrix[rr][cc] == pattern_value(pattern_index):
+                            and matrix[rr][cc] == pattern_value(pattern_index):
                         pattern_index += 1
                         rr += dr
                         cc += dc
