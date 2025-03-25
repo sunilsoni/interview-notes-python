@@ -38,10 +38,10 @@ class FrequentElement:
             ([1, 1, 1, 2, 2], 1),
             ([1], 1),
             ([], None),
-            ([1, 2, 3, 4, 5], 1), # if all unique, return the first one.
-            ([5, 5, 5, 5, 5, 1, 1, 1, 1, 1, 2, 2], 5), # Test case with large count difference
-            ([1, 1, 1, 2, 2, 2, 3, 3, 3], 1), # if there are multiple most frequent, return the first one.
-            list(range(10000)) + [9999]*10001, 9999 # large data test case.
+            ([1, 2, 3, 4, 5], 1),  # if all unique, return the first one.
+            ([5, 5, 5, 5, 5, 1, 1, 1, 1, 1, 2, 2], 5),  # Test case with large count difference
+            ([1, 1, 1, 2, 2, 2, 3, 3, 3], 1),  # if there are multiple most frequent, return the first one.
+            list(range(10000)) + [9999] * 10001, 9999  # large data test case.
         ]
 
         results = []
@@ -54,6 +54,7 @@ class FrequentElement:
 
         for result in results:
             print(result)
+
 
 # Example usage and testing
 frequent_element = FrequentElement()

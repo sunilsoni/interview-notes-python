@@ -1,5 +1,6 @@
 from collections import defaultdict, deque
 
+
 class CourseScheduler:
 
     def can_finish(self, num_courses, prerequisites):
